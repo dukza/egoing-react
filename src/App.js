@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import Header from './Component/Header';
 import Toc from './Component/Toc';
 import Contents from './Component/Contents';
+import Control from './Component/Control';
 
 class App extends Component {
     constructor(props){
@@ -51,6 +52,13 @@ class App extends Component {
                   selected_id:Number(id)
                 });
               }.bind(this)} 
+              />
+              <Control
+              onChangeMode={function(_mode){
+                this.setState({
+                  mode:_mode
+                })
+              }.bind(this)}
               />
               <Contents title={_title} desc={_desc}/>
             </div>
